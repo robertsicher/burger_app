@@ -2,6 +2,8 @@
 const connection = require("./connection.js");
 const util = require('util');
 
+const queryAsync = util.promisify(connection.query).bind(connection);
+
 module.exports = orm;
 
 const orm = {
@@ -30,7 +32,7 @@ const orm = {
     },
 
 
-//Update a burger
+    //Update a burger
     updateOne: async (tableQuery, columnName, colVal, refVal, valUpdate, ) => {
         try {
             const queryString = `UPDATE ${tableQuery} SET ${columnName} = '${valUpdate}' WHERE ${colVal} = '${refVal}'`;
@@ -41,4 +43,3 @@ const orm = {
         }
     },
 }
-
