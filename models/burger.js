@@ -1,7 +1,5 @@
 //orm Import
-const orm = require("../config/orm.js")
-
-module.exports = burger;
+const orm = require("../config/orm.js");
 
 //ORM invoke
 const burger = {
@@ -9,3 +7,5 @@ const burger = {
     newBurger: async (results) => await orm.insertOne("burgers", "burger_name", results),
     updateBurger: async (valUpdate, refVal) => await orm.updateOne("burgers", "devoured", valUpdate, "id", refVal, )
 };
+
+module.exports = burger;

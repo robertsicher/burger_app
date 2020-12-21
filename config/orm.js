@@ -4,8 +4,6 @@ const util = require('util');
 
 const queryAsync = util.promisify(connection.query).bind(connection);
 
-module.exports = orm;
-
 const orm = {
 
     //Select all the burgers in a db
@@ -42,4 +40,6 @@ const orm = {
             console.log('Error orm.js - UpdateOne', err);
         }
     },
-}
+};
+
+module.exports = orm;

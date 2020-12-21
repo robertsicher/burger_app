@@ -33,6 +33,7 @@ router.post("/api/burgers", async (req, res) => {
     }
 });
 
+//Update existing
 router.put("/api/burgers/:id", async (req, res) => {
 
 
